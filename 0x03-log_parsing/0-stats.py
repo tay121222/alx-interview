@@ -48,10 +48,7 @@ if __name__ == '__main__':
                 if line_count % 10 == 0:
                     print_statistics(total_file_size, status_code_counts)
 
-            except ValueError:
-                continue
-
-            except IndexError:
+            except (ValueError, IndexError) as e:
                 continue
 
         print_statistics(total_file_size, status_code_counts)
