@@ -11,19 +11,6 @@ def print_statistics(file_size, status_counts):
             print("{}: {}".format(code, status_counts[code]))
 
 
-def parse_line(line):
-    """Parses a line and extracts status code and file size"""
-    parts = line.strip().split()
-    if len(parts) >= 10:
-        try:
-            status_code = int(parts[-2])
-            file_size = int(parts[-1])
-            return status_code, file_size
-        except ValueError:
-            pass
-    return None, None
-
-
 if __name__ == '__main__':
     total_file_size = 0
     status_code_counts = {
