@@ -3,7 +3,7 @@
 import sys
 
 
-def print_statistics(file_size, status_counts):
+def print_statistics(file_size, status_counts) -> None:
     """Prints file size and status code"""
     print("File size: {}".format(file_size))
     for code in sorted(status_counts.keys()):
