@@ -35,10 +35,11 @@ if __name__ == '__main__':
                 if line_count % 10 == 0:
                     print_statistics(total_file_size, status_code_counts)
 
-            except (ValueError, IndexError) as e:
+            except (ValueError, IndexError, BaseException) as e:
                 continue
 
         print_statistics(total_file_size, status_code_counts)
 
     except KeyboardInterrupt:
         print_statistics(total_file_size, status_code_counts)
+        raise
