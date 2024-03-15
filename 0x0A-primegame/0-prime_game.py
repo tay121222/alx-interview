@@ -7,10 +7,11 @@ def isWinner(x, nums):
     """determine who the winner of each game"""
     def can_win(round_nums):
         """Check if Maria can win the current round"""
-        total_primes = sum(1 for num in range(
-            1, max(round_nums) + 1) if is_prime(num)
-            )
-        return total_primes % 2 == 1
+        remaining = list(range(2, max(round_nums) + 1))
+        for num in range(2, max(round_nums) + 1):
+            if is_prime(num):
+                remaining = [n for n in remaining if n % num != 0]
+        return len(remaining) % 2 == 1
 
     def is_prime(num):
         """Check if a number is prime"""
