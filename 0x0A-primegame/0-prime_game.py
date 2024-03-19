@@ -5,6 +5,10 @@ who the winner of each game"""
 
 def isWinner(x, nums):
     """Determine the winner of the game"""
+
+    if x < 0 or not nums:
+        return None
+
     maria_wins = 0
     ben_wins = 0
 
