@@ -4,6 +4,7 @@ who the winner of each game"""
 
 
 def isWinner(x, nums):
+    """Find winner of each game"""
     def sieve(n):
         """Genetare list of prime numbers"""
         primes = []
