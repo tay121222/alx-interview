@@ -6,13 +6,17 @@ who the winner of each game"""
 def isWinner(x, nums):
     """Determine the winner of the game"""
 
-    if x < 0 or not nums:
+    if x <= 0 or not nums:
         return None
 
     maria_wins = 0
     ben_wins = 0
 
     for num in nums:
+        if num == 0:
+            maria_wins += 1
+            continue
+
         rounds_set = list(range(1, num + 1))
         primes_set = primes_in_range(1, num)
 
